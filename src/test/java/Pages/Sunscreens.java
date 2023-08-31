@@ -64,8 +64,6 @@ public class Sunscreens {
         System.out.println(suns5.name);
         System.out.println(suns5.price);
 
-        String NumberOfItemsInCart = driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText();
-
 
         Sunscreens[] Suns = new Sunscreens[6];
         Suns[0] = suns;
@@ -75,30 +73,29 @@ public class Sunscreens {
         Suns[4] = suns4;
         Suns[5] = suns5;
 
-        Sunscreens[] AlreadyInCart = new Sunscreens[2];
-
         for (int i = 0; i <= Suns.length - 1; i++) {
-
             if (Suns[i].name.contains("SPF-30") || Suns[i].name.contains("spf-30")) {
                 System.out.println("this is Suns array " + Suns[i].name);
                 if (i <= 4) {
                     if (Suns[i].price < Suns[i + 1].price) {
-                        if (NumberOfItemsInCart.equals("Empty") || NumberOfItemsInCart.equals("1 item(s)")) {
-                                    Suns[i].Add_btn.click();
-
+                        if (driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("Empty") ||
+                                driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("1 item(s)")) {
+                            Suns[i].Add_btn.click();
                         }
                     }
                 }
-            } else if (Suns[i].name.contains("SPF-50")) {
-                System.out.println("this is Suns array " + Suns[i].name);
-                if (i <= 4) {
-                    if (Suns[i].price < Suns[i + 1].price) {
-                        if (NumberOfItemsInCart.equals("Empty") || NumberOfItemsInCart.equals("1 item(s)")){
-                            Suns[i].Add_btn.click();
-
+            } else {
+                if (Suns[i].name.contains("SPF-50")) {
+                    System.out.println("this is Suns array " + Suns[i].name);
+                    if (i <= 4) {
+                        if (Suns[i].price < Suns[i + 1].price) {
+                            if (driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("Empty") ||
+                                    driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("1 item(s)")) {
+                                Suns[i].Add_btn.click();
                             }
-                }
+                        }
                     }
+                }
             }
         }
     }

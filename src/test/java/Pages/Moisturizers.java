@@ -68,8 +68,6 @@ public class Moisturizers {
         System.out.println(Moisty5.name);
         System.out.println(Moisty5.price);
 
-        String NumberOfItemsInCart = driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText();
-
 
         Moisturizers[] MOI = new Moisturizers[6];
         MOI[0] = Moisty;
@@ -84,22 +82,28 @@ public class Moisturizers {
                 System.out.println("this is MOI array " + MOI[i].name);
                 if (i <= 4) {
                     if (MOI[i].price < MOI[i + 1].price) {
-                        if (NumberOfItemsInCart.equals("Empty") || NumberOfItemsInCart.equals("1 item(s)")) {
-                            MOI[i].Add_btn.click();
-                        }
-                    }
-                }
-            } else if (MOI[i].name.contains("Almond")) {
-                System.out.println("this is MOI array " + MOI[i].name);
-                if (i <= 4) {
-                    if (MOI[i].price < MOI[i + 1].price) {
-                        if (NumberOfItemsInCart.equals("Empty") || NumberOfItemsInCart.equals("1 item(s)")) {
+                        if (driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("Empty") ||
+                                driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("1 item(s)")) {
                             MOI[i].Add_btn.click();
                         }
                     }
                 }
             }
+            else{
+                if (MOI[i].name.contains("Almond") || MOI[i].name.contains("almond")) {
+                    System.out.println("this is MOI array " + MOI[i].name);
+                    if (i <=4) {
+                        if (MOI[i].price < MOI[i + 1].price) {
+                            if (driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("Empty") ||
+                                    driver.findElement(By.xpath("//*[@id=\"cart\"]")).getText().equals("1 item(s)")) {
+                                MOI[i].Add_btn.click();
+                            }
+                        }
+                    }
+                }
+            }
         }
+
     }
 }
 

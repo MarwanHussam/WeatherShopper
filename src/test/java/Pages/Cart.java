@@ -18,17 +18,35 @@ public class Cart {
         System.out.println("Email sent");
         WebElement CardNumber = driver.findElement(By.id("card_number"));
         CardNumber.click();
-        CardNumber.sendKeys("4242 4242 4242 4242");
+        String cardnum = "4242";
+        CardNumber.sendKeys(cardnum);
+        CardNumber.sendKeys(cardnum);
+        CardNumber.sendKeys(cardnum);
+        CardNumber.sendKeys(cardnum);
+        Thread.sleep(2000);
         System.out.println("Card sent");
         WebElement Date = driver.findElement(By.id("cc-exp"));
         Date.click();
-        Date.sendKeys("12/34");
+        Date.sendKeys("12");
+        Date.sendKeys("34");
         System.out.println("Date sent");
         WebElement CVC = driver.findElement(By.id("cc-csc"));
         CVC.click();
         CVC.sendKeys("123");
         System.out.println("CVC sent");
+        WebElement ZipCode = driver.findElement(By.xpath("//*[@id=\"billing-zip\"]"));
+        ZipCode.click();
+        ZipCode.sendKeys("0000");
+        System.out.println("Zip Sent");
         driver.findElement(By.xpath("//*[@id=\"submitButton\"]/span/span")).click();
-        System.out.println("Paid");
+        Thread.sleep(5000);
+        if (driver.getCurrentUrl().equals("https://weathershopper.pythonanywhere.com/confirmation")){
+            if (driver.findElement(By.xpath("/html/body/div/div[1]/h2")).getText().equals("PAYMENT FAILED")){
+                System.out.println("PAYMENT FAILED");
+            }
+            else{
+                System.out.println("PAYMENT SUCCESS");
+            }
+        }
     }
 }
