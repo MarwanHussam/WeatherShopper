@@ -20,7 +20,6 @@ public class CurrentTemp {
             Moisturizer_btn.click();
         else if (temperature>=34)
             Sunscreen_btn.click();
-        System.out.println(temperature);
     }
 
 
