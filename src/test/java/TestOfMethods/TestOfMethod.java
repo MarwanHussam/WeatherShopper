@@ -19,7 +19,6 @@ public class TestOfMethod {
         driver = new ChromeDriver();
         driver.get("https://weathershopper.pythonanywhere.com/");
         driver.manage().window().maximize();
-
         PressBuy(driver);
         String url = driver.getCurrentUrl();
         if(url.equals("https://weathershopper.pythonanywhere.com/moisturizer")){
@@ -28,8 +27,6 @@ public class TestOfMethod {
             sunscreenOne(driver);
         }
         CheckANDClick(driver);
-
-
         driver.close();
         driver.quit();
     }

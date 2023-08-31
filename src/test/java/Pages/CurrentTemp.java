@@ -7,7 +7,6 @@ public class CurrentTemp {
     public static void PressBuy(WebDriver driver){
         element = driver.findElement(By.id("temperature"));
         String val = element.getText();
-//        System.out.println(val.length());
         if(val.length()>3){
         val = val.substring(0,2);
         }

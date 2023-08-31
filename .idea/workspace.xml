@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f7340f8e-9e1c-4be1-a6c9-f4f5e1d3916d" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CurrentTemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CurrentTemp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Moisturizers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Moisturizers.java" afterDir="false" />
@@ -27,6 +26,8 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,6 +76,14 @@
       <option name="presentableId" value="Default" />
       <updated>1693228757666</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1693474268573</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693474268573</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

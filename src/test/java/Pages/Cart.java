@@ -4,10 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class Cart {
 
@@ -16,10 +13,9 @@ public class Cart {
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/button/span")).click();
         Thread.sleep(2000);
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("/html/body/iframe")));
-        System.out.println("switched");
         WebElement Email = driver.findElement(By.id("email"));
         Email.sendKeys("Mar@example.com");
-        System.out.println("keys sent");
+        System.out.println("Email sent");
         WebElement CardNumber = driver.findElement(By.id("card_number"));
         CardNumber.click();
         CardNumber.sendKeys("4242 4242 4242 4242");
@@ -34,6 +30,5 @@ public class Cart {
         System.out.println("CVC sent");
         driver.findElement(By.xpath("//*[@id=\"submitButton\"]/span/span")).click();
         System.out.println("Paid");
-
     }
 }

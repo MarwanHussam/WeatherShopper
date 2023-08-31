@@ -93,7 +93,9 @@ public class Moisturizers {
                 System.out.println("this is MOI array " + MOI[i].name);
                 if (i <= 4) {
                     if (MOI[i].price < MOI[i + 1].price) {
-                        MOI[i].Add_btn.click();
+                        if (NumberOfItemsInCart.equals("Empty") || NumberOfItemsInCart.equals("1 item(s)")) {
+                            MOI[i].Add_btn.click();
+                        }
                     }
                 }
             }
